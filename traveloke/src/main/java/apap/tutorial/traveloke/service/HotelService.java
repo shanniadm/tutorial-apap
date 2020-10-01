@@ -11,4 +11,8 @@ public interface HotelService {
 
     //Method untuk mendapatkan data sebuah hotel berdasarkan idHotel 
     HotelModel getHotelByIdHotel(String idHotel);
+
+    HotelModel updateNoTelepon(String idHotel, String noTelepon);
+
+    HotelModel deleteHotel(String idHotel);
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -60,9 +62,68 @@ public class HotelController {
             //Mendapatkan HotelModel sesuai dengan idHotel 
             HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
 
-            //Add variabel HotelModel ke "hotel" untuk dirender pada thymeleaf
-            model.addAttribute("hotel", hotel);
+            if(hotel!=null){
+                //Add variabel HotelModel ke "hotel" untuk dirender pada thymeleaf
+                model.addAttribute("hotel", hotel);
 
-            return "view-hotel";
+                return "view-hotel";
+            } else {
+                model.addAttribute("idHotel", idHotel);
+                return "id-tidak-tersedia";
+            }
+    }
+
+    @GetMapping(value = "/hotel/view/id-hotel/{idHotel}")
+    public String detailPathHotel(
+        @PathVariable(value = "idHotel", required = true) String idHotel,
+        Model model
+    ){
+            //Mendapatkan HotelModel sesuai dengan idHotel 
+            HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
+
+            if(hotel!=null){
+                //Add variabel HotelModel ke "hotel" untuk dirender pada thymeleaf
+                model.addAttribute("hotel", hotel);
+
+                return "view-hotel";
+            } else {
+                model.addAttribute("idHotel", idHotel);
+                return "id-tidak-tersedia";
+            }
+    }
+
+    @GetMapping(value = "/hotel/update/id-hotel/{idHotel}/no-telepon/{noTelepon}")
+    public String updateNoTelepon(
+        @PathVariable(value = "idHotel", required = true) String idHotel,
+        @PathVariable(value = "noTelepon", required = true) String noTelepon,
+        Model model
+    ){
+        //untuk update nomor Telepon
+        HotelModel hotel = hotelService.updateNoTelepon(idHotel, noTelepon);
+
+        //Add variabel ke HotelModel untuk dirender pada thymeleaf
+        model.addAttribute("idHotel", idHotel);
+
+        if(hotel!=null){
+            return "update-notelp";
+        } else {
+            return "id-tidak-tersedia";
+        }
+    }
+
+    @GetMapping(value = "/hotel/delete/id-hotel/{idHotel}")
+    public String deleteHotel(
+        @PathVariable(value = "idHotel", required = true) String idHotel,
+        Model model
+    ){
+        HotelModel hotel = hotelService.deleteHotel(idHotel);
+
+        model.addAttribute("idHotel", idHotel);
+
+        if(hotel!=null){
+            return "delete-hotel";
+        } else {
+            return "id-tidak-tersedia";
+        }
     }
 }
