@@ -34,6 +34,6 @@ public class HotelInMemoryService implements HotelService{
                 return hotel;
             }
         }
+        return null;
     }
-
 }
