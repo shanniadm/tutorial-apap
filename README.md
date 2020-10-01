@@ -68,7 +68,7 @@ https://medium.com/1developer/spring-requestparam-vs-queryparam-vs-pathvariable-
 ###
 5. Pertanyaan 5: Tambahkan 1 contoh Hotel lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/hotel/viewall , apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
 ###
-**Jawab** : Yang ditampilkan adalah semua hotel yang berada di list yaitu hotel Papa APAP dan hotel yang baru saya tambahkan. 
+**Jawab** : Yang ditampilkan adalah semua hotel yang berada di list yaitu hotel Papa APAP dan hotel yang baru saya tambahkan yaitu bernama Hotel Shannia. 
 
 ![ScreenShot](https://i.ibb.co/S7K0Zk3/Hotel-Screen-Shot.jpg)
 
