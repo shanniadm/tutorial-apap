@@ -31,16 +31,16 @@ public class HotelModel implements Serializable{
     private List<KamarModel> listKamar;
 
     //Generate
-    public HotelModel(String idHotel, String namaHotel, String alamat, String noTelepon){
-        this.idHotel = idHotel;
+    public HotelModel(Long id, String namaHotel, String alamat, Integer nomorTelepon){
+        this.id = id;
         this.namaHotel = namaHotel;
         this.alamat = alamat;
-        this.noTelepon = noTelepon;
+        this.nomorTelepon = nomorTelepon;
     }
 
     //Getter untuk idHotel, namaHotel, alamat, dan noTelepon.
-    public String getIdHotel(){
-        return idHotel;
+    public Long getId(){
+        return id;
     }
 
     public String getNamaHotel(){
@@ -51,13 +51,13 @@ public class HotelModel implements Serializable{
         return alamat;
     }
 
-    public String getNoTelepon(){
-        return noTelepon;
+    public Integer getNoTelepon(){
+        return nomorTelepon;
     }
 
     //Setter untuk idHotel, namaHotel, alamat, dan noTelepon.
-    public void setIdHotel(String idHotel){
-        this.idHotel = idHotel;
+    public void setIdHotel(Long id){
+        this.id = id;
     }
 
     public void setNamaHotel(String namaHotel){
@@ -68,7 +68,7 @@ public class HotelModel implements Serializable{
         this.alamat = alamat;
     }
 
-    public void setNoTelepon(String noTelepon){
-        this.noTelepon = noTelepon;
+    public void setNomorTelepon(Integer nomorTelepon){
+        this.nomorTelepon = nomorTelepon;
     }
 }
