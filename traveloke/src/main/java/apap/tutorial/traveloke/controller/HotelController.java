@@ -50,6 +50,7 @@ public class HotelController {
     ){
         HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
         model.addAttribute("hotel", hotel);
+        model.addAttribute("idHotel", hotel.getId());
         return "form-update-hotel";
     }
 
@@ -58,8 +59,9 @@ public class HotelController {
         @ModelAttribute HotelModel hotel,
         Model model
     ){
+        System.out.println(hotel.getAlamat());
         HotelModel hotelUpdated = hotelService.updateHotel(hotel);
-        model.addAttribute("hotel", hotelUpdated);
+        model.addAttribute("hotel", hotel);
         return "update-hotel";
     }
 
@@ -75,36 +77,17 @@ public class HotelController {
         return "view-hotel";
     }
 
-    // @RequestMapping("/hotel/viewall")
-    // public String listHotel(Model model){
-    //     //Mendapatkan semua HotelModel 
-    //     List<HotelModel> listHotel = hotelService.getHotelList();
+    @RequestMapping("/hotel/viewall")
+    public String listHotel(Model model){
+        //Mendapatkan semua HotelModel 
+        List<HotelModel> listHotel = hotelService.getHotelList();
 
-    //     //Add variabel semua HotelModel ke "listHotel" untuk dirender pada thymeleaf.
-    //     model.addAttribute("listHotel", listHotel);
+        //Add variabel semua HotelModel ke "listHotel" untuk dirender pada thymeleaf.
+        model.addAttribute("listHotel", listHotel);
 
-    //     //Return view template yang diinginkan
-    //     return "viewall-hotel";
-    // }
-
-    // @RequestMapping("/hotel/view")
-    // public String detailHotel(
-    //     @RequestParam(value = "idHotel") String idHotel,
-    //     Model model){
-
-    //         //Mendapatkan HotelModel sesuai dengan idHotel 
-    //         HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
-
-    //         if(hotel!=null){
-    //             //Add variabel HotelModel ke "hotel" untuk dirender pada thymeleaf
-    //             model.addAttribute("hotel", hotel);
-
-    //             return "view-hotel";
-    //         } else {
-    //             model.addAttribute("idHotel", idHotel);
-    //             return "id-tidak-tersedia";
-    //         }
-    // }
+        //Return view template yang diinginkan
+        return "viewall-hotel";
+    }
 
     // @GetMapping(value = "/hotel/view/id-hotel/{idHotel}")
     // public String detailPathHotel(

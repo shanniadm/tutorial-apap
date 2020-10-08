@@ -5,6 +5,6 @@
 </head>
 <body>
     <h2 th:text="'Kamar Hotel dengan Id ' + ${kamar.hotel.id} + ' berhasil ditambahkan'"></h2>
-    <a href="/hotel/view">Kembali</a>
+    <td><a th:href="@{/hotel/view?idHotel=}+${kamar.hotel.id}">Kembali</a></td>
 </body>
 </html>

@@ -62,5 +62,5 @@ public class HotelModel implements Serializable{
 
     public void setNomorTelepon(Integer nomorTelepon){
         this.nomorTelepon = nomorTelepon;
-    }
+    }    
 }
