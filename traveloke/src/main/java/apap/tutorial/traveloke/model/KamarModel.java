@@ -34,14 +34,6 @@ public class KamarModel implements Serializable{
     @JsonIgnore
     private HotelModel hotel;
 
-    public KamarModel(Long noKamar, String namaKamar, Integer tipe, Integer kapasitasKamar, HotelModel hotel){
-        this.noKamar = noKamar;
-        this.namaKamar = namaKamar;
-        this.tipe = tipe;
-        this.kapasitasKamar = kapasitasKamar;
-        this.hotel = hotel;
-    }
-
     public Long getNoKamar(){
         return this.noKamar;
     }
