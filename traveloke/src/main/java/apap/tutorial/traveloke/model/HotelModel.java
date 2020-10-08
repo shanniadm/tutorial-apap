@@ -43,7 +43,7 @@ public class HotelModel implements Serializable{
         return alamat;
     }
 
-    public Integer getNoTelepon(){
+    public Integer getNomorTelepon(){
         return nomorTelepon;
     }
 
