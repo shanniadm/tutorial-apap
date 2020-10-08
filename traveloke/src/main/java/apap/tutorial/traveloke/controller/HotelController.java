@@ -59,7 +59,7 @@ public class HotelController {
         Model model
     ){
         HotelModel hotelUpdated = hotelService.updateHotel(hotel);
-        model.addAttribute("hotel", hotel);
+        model.addAttribute("hotel", hotelUpdated);
         return "update-hotel";
     }
 

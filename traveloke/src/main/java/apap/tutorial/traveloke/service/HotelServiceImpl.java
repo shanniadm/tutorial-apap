@@ -3,8 +3,6 @@ import apap.tutorial.traveloke.model.HotelModel;
 import apap.tutorial.traveloke.repository.HotelDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transaction;
 import javax.transaction.Transactional;
 
 import java.util.List;
