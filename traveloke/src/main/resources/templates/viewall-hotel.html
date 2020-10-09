@@ -4,7 +4,9 @@
     <title>View All Hotel</title>
 </head>
 <body>
+    <td><a th:href="@{/}">Kembali ke Home</a></td>
     <h2>Daftar Seluruh Hotel</h2>
+    <hr>
     <div th:each="hotel: ${listHotel}">
         <h3 th:text="'Id Hotel: '+ ${hotel.id}"></h3>
         <h3 th:text="'Nama Hotel: '+ ${hotel.namaHotel}"></h3>
