@@ -5,15 +5,18 @@
 </head>
 <body>
     <section>
+        <td><a th:href="@{/hotel/viewall}">Kembali</a></td>
         <h2>Informasi Hotel</h2>
         <h3 th:text="'Id Hotel : ' + ${hotel.id}"></h3>
         <h3 th:text="'Nama Hotel : ' + ${hotel.namaHotel}"></h3>
         <h3 th:text="'Alamat Hotel : ' + ${hotel.alamat}"></h3>
         <h3 th:text="'Nomor Telepon : ' + ${hotel.nomorTelepon}"></h3>
-        <td><a th:href="@{/hotel/change/}+${hotel.id}">Change Data Hotel</a></td>        
+        <td><a th:href="@{/hotel/change/}+${hotel.id}">Change Data Hotel</a></td>
+        <td><a th:href="@{/hotel/delete/} + ${hotel.id}">Hapus Hotel</a></td>        
     </section>
     <section>
         <h2>Daftar Kamar:</h2>
+        <h2 th:if="${listKamar.size()==0}">Hotel belum memiliki daftar kamar.</h2>
         <div th:each="kamar : ${listKamar}">
             <h3 th:text="'No Kamar: ' + ${kamar.noKamar}"></h3>
             <h3 th:text="'Nama Kamar : ' + ${kamar.namaKamar}"></h3>
@@ -24,6 +27,7 @@
 
             <h3 th:text="'Kapasitas kamar : '+ ${kamar.kapasitasKamar}"></h3>
             <td><a th:href="@{/kamar/change/} + ${kamar.noKamar}">Change Data Kamar</a></td>
+            <td><a th:href="@{/kamar/delete/} +${kamar.noKamar}">Hapus Kamar</a></td>   
         </div><br><br>
         <td><a th:href="@{/kamar/add/}+${hotel.id}">Add Kamar</a></td>
     </section>

@@ -51,4 +51,9 @@ public class HotelInMemoryService {
         // return null;
         return null;
     }
+
+    //@Override
+    public List<HotelModel> getHotelListSorted(){
+        return null;
+    }
 }

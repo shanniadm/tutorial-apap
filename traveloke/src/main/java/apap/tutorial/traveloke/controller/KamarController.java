@@ -27,12 +27,17 @@ public class KamarController {
         @PathVariable Long idHotel,
         Model model
     ){
-        KamarModel kamar = new KamarModel();
-        HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
-        kamar.setHotel(hotel);
-        model.addAttribute("kamar",kamar);
-
-        return "form-add-kamar";
+        try{
+            KamarModel kamar = new KamarModel();
+            HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
+            kamar.setHotel(hotel);
+            model.addAttribute("kamar",kamar);
+            model.addAttribute("idHotel", idHotel);
+            return "form-add-kamar";
+        } catch (Exception e){
+            model.addAttribute("idProcess", idHotel);
+            return "cant-process";
+        }
     }
 
     @PostMapping("/kamar/add")
@@ -43,5 +48,50 @@ public class KamarController {
         kamarService.addKamar(kamar);
         model.addAttribute("kamar", kamar);
         return "add-kamar";
+    }
+
+    @GetMapping("/kamar/change/{noKamar}")
+    public String changeKamarFormPage(
+        @PathVariable Long noKamar, 
+        Model model
+    ){
+        try{
+            KamarModel kamar = kamarService.getKamarByNoKamar(noKamar);
+            model.addAttribute("kamar", kamar);
+            model.addAttribute("noKamar", noKamar);
+            return "form-update-kamar";   
+        } catch(Exception e){
+            model.addAttribute("idProcess", noKamar);
+            return "cant-process";
+        }
+        
+    }
+
+    @PostMapping("/kamar/change")
+    public String changeHotelFormSubmit(
+        @ModelAttribute KamarModel kamar,
+        Model model
+    ){
+        KamarModel kamarUpdated = kamarService.updateKamar(kamar);
+        model.addAttribute("idHotel", kamarUpdated.getHotel().getId());
+        model.addAttribute("kamar", kamarUpdated);
+        return "update-kamar";
+    }
+
+    @GetMapping("/kamar/delete/{noKamar}")
+    public String deleteHotel(
+        @PathVariable Long noKamar, 
+        Model model
+    ){
+        try{
+            Long idHotel = kamarService.deleteKamar(noKamar);
+            model.addAttribute("noKamar", noKamar);
+            model.addAttribute("idHotel", idHotel);
+            return "delete-kamar";
+        } catch (Exception e){
+            model.addAttribute("idProcess", noKamar);
+            return "cant-process";
+        }
+        
     }
 }

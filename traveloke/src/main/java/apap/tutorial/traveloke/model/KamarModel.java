@@ -73,5 +73,4 @@ public class KamarModel implements Serializable{
     public void setHotel(HotelModel hotel){
         this.hotel = hotel;
     }
-
 }
