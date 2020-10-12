@@ -50,5 +50,15 @@ public class KamarServiceImpl implements KamarService {
         kamarDb.deleteById(noKamar);
         return idHotel;
     }
+
+    @Override
+    public List<KamarModel> getKamarByNamaKamarDanKapasitas(String namaKamar, Integer kapasitasKamar){
+        try{
+            List<KamarModel> kamar = kamarDb.findByNamaKamarAndKapasitasKamar(namaKamar, kapasitasKamar);
+            return kamar;
+        } catch (NullPointerException nullException){
+            return null;
+        }
+    }
 }
 

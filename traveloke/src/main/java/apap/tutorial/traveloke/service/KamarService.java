@@ -12,4 +12,6 @@ public interface KamarService {
     KamarModel updateKamar(KamarModel kamar);
 
     Long deleteKamar(Long noKamar);
+
+    List<KamarModel> getKamarByNamaKamarDanKapasitas(String namaKamar, Integer kapasitasKamar);
 }
