@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import apap.tutorial.traveloke.model.HotelModel;
 
 @Service
-public class HotelInMemoryService implements HotelService{
+public class HotelInMemoryService {
     
     private List<HotelModel> listHotel;
 
@@ -18,47 +18,42 @@ public class HotelInMemoryService implements HotelService{
         listHotel = new ArrayList<>();
     }
 
-    @Override
+    //@Override
     public void addHotel(HotelModel hotel){
-        listHotel.add(hotel);
+        // listHotel.add(hotel);
     }
 
-    @Override
+    //@Override
     public List<HotelModel> getHotelList(){
-        return listHotel;
-    }
-
-    @Override
-    public HotelModel getHotelByIdHotel(String idHotel){
-        for(HotelModel hotel : listHotel){
-            if(hotel.getIdHotel().equals(idHotel)){
-                return hotel;
-            }
-        }
+        // return listHotel;
         return null;
     }
 
-    @Override
-    public HotelModel updateNoTelepon(String idHotel, String noTelepon){
-        for(HotelModel hotel : listHotel){
-            if(hotel.getIdHotel().equals(idHotel)){
-                hotel.setNoTelepon(noTelepon);
-                return hotel;
-            }
-        }
+    //@Override
+    public HotelModel getHotelByIdHotel(Long idHotel){
+        // for(HotelModel hotel : listHotel){
+        //     if(hotel.getId().equals(idHotel)){
+        //         return hotel;
+        //     }
+        // }
+        // return null;
         return null;
     }
 
-    @Override
-    public HotelModel deleteHotel(String idHotel){
-        HotelModel a;
-        for(HotelModel hotel : listHotel){
-            if(hotel.getIdHotel().equals(idHotel)){
-                a = hotel;
-                listHotel.remove(hotel);
-                return a;
-            }
-        }
+    //@Override
+    public HotelModel updateHotel(HotelModel hotel){
+        // for(HotelModel hotel : listHotel){
+        //     if(hotel.getId().equals(id)){
+        //         hotel.setNomorTelepon(nomorTelepon);
+        //         return hotel;
+        //     }
+        // }
+        // return null;
+        return null;
+    }
+
+    //@Override
+    public List<HotelModel> getHotelListSorted(){
         return null;
     }
 }

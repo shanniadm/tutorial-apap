@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sf="http://www.w3.org/1999/xhtml" lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Update Data Kamar</title>
+</head>
+<body>
+    <h3>Update Kamar</h3>
+    <form th:action="@{/kamar/change}" th:object="${kamar}" method="POST">
+    <input type="hidden" name="noKamar" th:value="*{noKamar}"/>
+    Nama Kamar : <br>
+    <input type="text" name="namaKamar" th:value="*{namaKamar}"/>
+    <br>
+    Tipe Kamar: <br> 
+    <select name="tipe" th:value="*{tipe}">
+        <option value="0">Deluxe</option>
+        <option value="1">Executive</option>
+        <option value="2">President Suite</option>
+    </select>
+    <br>
+    Kapasitas Kamar : <br> 
+    <input type="number" name="kapasitasKamar" th:value="*{kapasitasKamar}"/>
+    <br>
+    <button type="submit" value="submit">Submit</button>
+    </form>
+    <td><a th:href="@{/hotel/view?idHotel=} + ${kamar.hotel.id}">Kembali</a></td>
+</body>
+</html>

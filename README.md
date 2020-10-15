@@ -74,6 +74,49 @@ https://medium.com/1developer/spring-requestparam-vs-queryparam-vs-pathvariable-
 
 Atau bisa dilihat melalui tautan berikut : https://drive.google.com/file/d/1W162xmfb5kyIeTlb6nglJjJnrMffXbMp/view?usp=sharing
 
+-----
+## **Tutorial 3**
+### **Pertanyaan**
+###
+1. Pada class KamarDb, terdapat method findAllByHotelId, apakah kegunaan dari method tersebut?
+##
+Method findAllByHotelId berfungsi untuk mengambil beberapa entitas KamarModel sekaligus berdasarkan HotelId yang diberikan yang akan dikembalikan dalam bentuk List. 
+##
+2. Pada class HotelController, jelaskan perbedaan method addHotelFormPage dan addHotelSubmit?
+##
+Method AddHotelFormPage ditujukan untuk mencetak form untuk menambahkan Hotel dengan menjalankan html "form-add-hotel", sedangkan AddHotelSubmit untuk mengambil nilai/value dari form yang sudah dicetak dari AddHotelFormPage kemudian menginisiasi hotel baru.  
+##
+3. Jelaskan kegunaan dari JPA Repository!
+##
+Kegunaan dari JPA Repository adalah mempermudah user untuk membuat repositori tanpa kode, dimana menyembunyikan detail implementasi khusus penyimpanan data serta memungkinkan untuk menerapkan kode pada tingkat abstraksi yang lebih tinggi. Selain itu, JPA Repository juga mempermudah dalam pembuatan query database berdasarkan nama metode yang ada, dimana apabila tidak terlalu rumit maka hanya perlu untuk menentukan kode pada interface repository. 
+##
+4. Sebutkan dan jelaskan di bagian kode mana sebuah relasi antara HotelModel dan KamarModel dibuat?
+##
+Pada HotelModel terdapat relasi OneToMany dengan Kamar Model pada kodingan tersebut :
+@OneToMany(mappedBy="hotel", fetch= FetchType.LAZY, cascade= CascadeType.ALL)
+    private List< KamarModel > listKamar;
+Kode tersebut untuk membuat relasi bahwa 1 Hotel dapat memiliki banyak kamar sekaligus. 
+##
+5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER!
+##
+FetchType.LAZY : Mengambil entitas anak dengan malas, yaitu saat mengambil entitas parents, maka hanya mengambil proxy saja dari entitas anak. Ketika kita mengakses properti dari entitas child maka sebenarnya diambil dengan hibernate. 
+##
+CascadeType.ALL : Mewariskan semua operasi entity manager seperti persist, remove, refresh, merge dan detach ke etitas yang terkait. 
+##
+FetchType.EAGER : Untuk mengambil entitas child bersama dengan parentnya. 
+##
+Referensi :
+##
+https://www.java2novice.com/hibernate/eager-vs-lazy-fetch-type/
+##
+https://thorben-janssen.com/what-is-spring-data-jpa-and-why-should-you-use-it/#3_reasons_to_use_Spring_Data_JPA
+##
+https://stackoverflow.com/questions/13027214/what-is-the-meaning-of-the-cascadetype-all-for-a-manytoone-jpa-association
+##
+
+
+
+
 
 
 

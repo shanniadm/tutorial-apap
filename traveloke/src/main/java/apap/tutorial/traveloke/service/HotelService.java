@@ -6,13 +6,17 @@ public interface HotelService {
     //Method untuk menambah Hotel
     void addHotel(HotelModel hotel);
 
-    //Method untuk mendapatkan daftar Hotel yang telah tersimpan
+    //Method untuk mendapatkan daftar Hotel yang telah tersimpan 
     List<HotelModel> getHotelList();
 
-    //Method untuk mendapatkan data sebuah hotel berdasarkan idHotel 
-    HotelModel getHotelByIdHotel(String idHotel);
+    //Method untuk mendapatkan data sebuah hotel berdasarkan id hotel
+    HotelModel getHotelByIdHotel(Long idHotel);
 
-    HotelModel updateNoTelepon(String idHotel, String noTelepon);
+    //Method untuk update hotel
+    HotelModel updateHotel(HotelModel hotel);
 
-    HotelModel deleteHotel(String idHotel);
+    List<HotelModel> getHotelListSorted();
+
+    void deleteHotel(Long idHotel);
 }
+
