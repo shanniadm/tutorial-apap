@@ -9,23 +9,38 @@
 <body>
     <nav th:replace="fragments/fragment :: navbar"></nav>
     <h3>Tambah Kamar</h3>
-    <form th:action="@{/kamar/add}" th:object="${kamar}" method="POST">
-    <input type="hidden" th:field="*{hotel}"/>
-    Nama Kamar : <br>
-    <input type="text" name="namaKamar"/>
-    <br>
-    Tipe Kamar: <br> 
-    <select name="tipe">
-        <option value="0">Deluxe</option>
-        <option value="1">Executive</option>
-        <option value="2">President Suite</option>
-    </select>
-    <br>
-    Kapasitas Kamar : <br> 
-    <input type="number" name="kapasitasKamar"/>
-    <br>
-    <button type="submit">Submit</button>
+    <form th:action="@{/kamar/add}" th:object="${hotel}" method="POST">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Tipe Kamar</th>
+                    <th>Kapasitas Kamar</th>
+                    <th>Tambah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="kamar, itr : *{listKamar}">
+                    <input type="hidden" th:field="*{listKamar[__${itr.index}__].hotel}"/>
+                    <td><input type="text" name="namaKamar" th:value="*{listKamar[__${itr.index}__].namaKamar}"/></td>
+                    <td>
+                        <select name="tipe" th:value="*{listKamar[__${itr.index}__].tipe}">
+                            <option value="0">Deluxe</option>
+                            <option value="1">Executive</option>
+                            <option value="2">President Suite</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="kapasitasKamar" th:value="*{listKamar[__${itr.index}__].kapasitasKamar}"/></td>
+                    <td><a th:href="@{/kamar/remove_row/}+${itr.count}"></a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button type="submit" class=" btn btn-success">Submit</button></td>
+                </tr>
+            </tbody>
+        </table>
     </form>
-    <td><a th:href="@{/hotel/view?idHotel=} + ${idHotel}">Kembali</a></td>
 </body>
 </html>

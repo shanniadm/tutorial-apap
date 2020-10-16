@@ -29,7 +29,7 @@ public class HotelModel implements Serializable{
 
     @OneToMany(mappedBy="hotel", fetch= FetchType.LAZY, cascade= CascadeType.ALL)
     private List<KamarModel> listKamar;
-    
+
     //Getter untuk idHotel, namaHotel, alamat, dan noTelepon.
     public Long getId(){
         return id;
@@ -47,6 +47,10 @@ public class HotelModel implements Serializable{
         return nomorTelepon;
     }
 
+    public List<KamarModel> getListKamar(){
+        return listKamar;
+    }
+    
     //Setter untuk idHotel, namaHotel, alamat, dan noTelepon.
     public void setIdHotel(Long id){
         this.id = id;
@@ -63,4 +67,12 @@ public class HotelModel implements Serializable{
     public void setNomorTelepon(Integer nomorTelepon){
         this.nomorTelepon = nomorTelepon;
     }    
+
+    public void setListKamar(List<KamarModel> listKamar){
+        this.listKamar = listKamar;
+    }
+
+    public void addListKamar(KamarModel kamar){
+        this.listKamar.add(kamar);
+    }
 }
