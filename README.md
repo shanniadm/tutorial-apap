@@ -114,6 +114,27 @@ https://thorben-janssen.com/what-is-spring-data-jpa-and-why-should-you-use-it/#3
 https://stackoverflow.com/questions/13027214/what-is-the-meaning-of-the-cascadetype-all-for-a-manytoone-jpa-association
 ##
 
+-----------
+## **Tutorial 4**
+### **Pertanyaan**
+###
+1. Jelaskan perbedaan th:include dan th:replace!
+##
+th:replace ditujukan untuk menggantikan tag host dengan tag yang didefinisikan di fragment, sedangkan th:include ditujukan untuk memasukan fragment yang ditentukan sebagai badan dari tag hostnya, tetapi mengecualikan tag dari fragment. 
+##
+2. Jelaskan apa fungsi dari th:object!
+##
+th:object digunakan untuk mendefinisikan dari object mana suatu field di referensikan. Misalnya, pada suatu form terdapat th:object, maka di dalam form tersebut *{field} direferensikan oleh object tersebut. 
+##
+3. Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?
+##
+${} adalah variable expressions atau ekspresi standar. *{} adalah selection variable expressions, hampir sama seperti variable expressions, namun ekspresi tersebut bisa dikombinasikan dengan atribut th:object. Misalnya, kita memiliki < form th:objects="${form}">, maka ekspresi *{field} sama seperti ${form.field} dimana hal ini sering digunakan untuk membuat formulir saat atribut th:field digunakan. 
+##
+4. Bagaimana kamu menyelesaikan latihan nomor 3?
+##
+Saya menyelesaikan nomor 3 dengan memberikan parameter ke html terkait mengenai informasi halaman sehingga ketika menjalankan navbar, html akan memanggil ${halaman} yang merupakan nama halaman tersebut. Misalnya, pada Controller, di fungsi Add Hotel maka akan ditambahkan parameter bernama halaman yang akan bisa diakses di HTML yang berisi string "Add Hotel". Hal tersebut saya lakukan untuk setiap page yang ada. 
+##
+
 
 
 

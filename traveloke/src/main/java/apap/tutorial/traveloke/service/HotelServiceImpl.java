@@ -54,4 +54,5 @@ public class HotelServiceImpl implements HotelService {
     public void deleteHotel(Long idHotel){
         hotelDb.deleteById(idHotel);
     }
+
 }

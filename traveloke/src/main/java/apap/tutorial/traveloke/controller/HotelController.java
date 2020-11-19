@@ -22,7 +22,8 @@ public class HotelController {
     private KamarService kamarService;
 
     @GetMapping("/")
-    private String home(){
+    private String home(Model model){
+        model.addAttribute("halaman", "Home");
         return "home";
     }
 
@@ -30,6 +31,7 @@ public class HotelController {
     @RequestMapping("/hotel/add")
     public String addHotelFormPage(Model model){
         model.addAttribute("hotel", new HotelModel());
+        model.addAttribute("halaman", "Add Hotel");
         return "form-add-hotel";
     }
 
@@ -52,6 +54,7 @@ public class HotelController {
             HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
             model.addAttribute("hotel", hotel);
             model.addAttribute("idHotel", hotel.getId());
+            model.addAttribute("halaman", "Update Hotel");
             return "form-update-hotel";
         } catch (Exception e){
             model.addAttribute("idProcess", idHotel);
@@ -78,6 +81,7 @@ public class HotelController {
         try {
             HotelModel hotel = hotelService.getHotelByIdHotel(idHotel);
             List<KamarModel> listKamar = kamarService.findAllKamarByIdHotel(idHotel);
+            model.addAttribute("halaman", "View Hotel");
             model.addAttribute("hotel", hotel);
             model.addAttribute("listKamar", listKamar);
             return "view-hotel";
@@ -91,7 +95,7 @@ public class HotelController {
     public String listHotel(Model model){
         //Mendapatkan semua HotelModel 
         List<HotelModel> listHotel = hotelService.getHotelListSorted();
-
+        model.addAttribute("halaman", "View All Hotel");
         //Add variabel semua HotelModel ke "listHotel" untuk dirender pada thymeleaf.
         model.addAttribute("listHotel", listHotel);
 
