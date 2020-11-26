@@ -26,4 +26,38 @@ public class UserServiceImpl implements UserService{
         String hashedPassword = passwordEncoder.encode(password);
         return hashedPassword;
     }
+
+    @Override
+    public void updatePassword(UserModel user, String pass){
+        String passFinal = encrypt(pass);
+        user.setPassword(passFinal);
+    }
+
+    @Override
+    public UserModel findUser(String username){
+        return userDb.findByUsername(username);
+    }
+
+    @Override 
+    public Boolean validatePass(String pass){
+        if(pass.length()<8){
+            return false;
+        } else {
+            int jumlahAngka = 0;
+            int jumlahHuruf = 0;
+            for(int i=0; i<pass.length(); i++){
+                try{
+                    int angka = Integer.parseInt(String.valueOf(pass.charAt(i)));
+                    jumlahAngka++;
+                } catch (NumberFormatException e) {
+                    jumlahHuruf++;
+                }
+            }
+            if(jumlahAngka>0 && jumlahHuruf>0){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }

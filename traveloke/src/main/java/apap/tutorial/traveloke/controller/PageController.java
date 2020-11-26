@@ -7,6 +7,8 @@ import apap.tutorial.traveloke.service.RoleService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class PageController {
 
@@ -14,7 +16,7 @@ public class PageController {
     private RoleService roleService;
 
     @RequestMapping("/")
-    public String home(Model model){
+    public String home(Model model, HttpServletRequest req){
         model.addAttribute("listRole", roleService.findAll());
         return "home";
     }

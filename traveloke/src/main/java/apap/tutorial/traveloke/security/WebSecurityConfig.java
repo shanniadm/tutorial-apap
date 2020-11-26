@@ -19,8 +19,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         http
             .authorizeRequests()
             .antMatchers("/css/**").permitAll()
-            .antMatchers("js/**").permitAll()
+            .antMatchers("/js/**").permitAll()
             .antMatchers("/hotel/**").hasAuthority("RECEPTIONIST")
+            .antMatchers("/user/addUser").hasAuthority("ADMIN")
+            .antMatchers("/kamar/add/**").hasAuthority("RECEPTIONIST")
             .anyRequest().authenticated()
             .and()
             .formLogin()
