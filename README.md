@@ -167,6 +167,35 @@ https://www.concretepage.com/jackson-api/jackson-jsonproperty-and-jsonalias-exam
 https://stackoverflow.com/questions/10413886/what-is-the-use-of-bindingresult-interface-in-spring-mvc
 
 
+----------------
+
+## **Tutorial 6**
+### **Pertanyaan**
+##
+1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?
+##
+Jawab : Otentikasi adalah suatu proses untuk memverifikasi siapa kita, misalnya dengan login. Sedangkan otorisasi adalah proses memverifikasi apakah kita memiliki akses ke sesuatu, misalnya hanya admin yang bisa menambah user. Contoh implementasi kode dalam kedua hal tersebut adalah : (1) Penerapan otentikasi ketika melakukan login yaitu authenticated() ketika configure. (2) Penerapan otorisasi adalah pada WebSecurityConfig terdapat fungsi configure dimana terdapat antMatchers dan hasAuthority, jadi untuk url tertentu hanya bisa diakses oleh role tertentu saja. 
+##
+2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.
+## 
+Jawab : BCryptPasswordEncoder adalah suatu fungsi yang digunakan untuk melakukan enkripsi hash untuk password. Cara kerjanya adalah melakukan inisiasi dengan membuat object BCrypt kemudian dapat menggunakan fungsi-fungsi yang ada seperti menggunakan fungsi encode() untuk mengubah password menjadi hashPassword, kemudian untuk memverifikasi password yang ada menggunakan fungsi matches(). 
+##
+3. Jelaskan secara singkat apa itu UUID beserta penggunaannya!
+##
+Jawab : UUID atau Universally Unique Identifier adalah kumpulan 36 karakter string yang dibuat secara acak serta unik menggunakan teknik khusus. Penggunaannya adalah untuk sebagai Primary Key, dikarenakan karakter UUID yang unik maka kecil kemungkinan karakter UUID sama bahkan jika digenerate dalam 1 detik sekalipun. Selain itu, penggunaan UUID ditujukan untuk menghindari konflik primary key, serta untuk mengamankan data dikarenakan pengguna iseng tidak dapat mengetahui data profile orang lain dengan ID profile apabila menggunakan UUID. 
+##
+4. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah memiliki class UserRoleServiceImpl.java?
+##
+Jawab : Kegunaan class tersebut adalah untuk mengembalikan grantedAuthorities yang diperlukan. Dimana UserDetailsServiceImpl adalah tempat pemetaan otoritas dilakukan, dimana setelah pengguna melakukan otentikasi dan menggunakan getAuthorities() untuk mengumpulkan dan mengembalikan objek UserDetails. Sedangkan Role sendiri digunakan untuk sebagai wadah otoritas tersebut. 
+##
+-----------------------
+Referensi :
+##
+https://qastack.id/server/57077/what-is-the-difference-between-authentication-and-authorization
+##
+https://www.eplusgo.com/menggunakan-uuid-di-php/
+##
+https://www.baeldung.com/spring-security-granted-authority-vs-role
 
 
 
