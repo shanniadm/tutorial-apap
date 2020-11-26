@@ -18,9 +18,13 @@ public class UserController {
 
     @RequestMapping(value="/addUser", method = RequestMethod.POST)
     public String addUserSubmit(@ModelAttribute UserModel user, Model model){
-        userService.addUser(user);
         model.addAttribute("user", user);
-        return "redirect:/";
+        if(userService.validatePass(user.getPassword())){
+            userService.addUser(user);
+            return "redirect:/";
+        } else {
+            return "failed-add-user";
+        }
     }
 
     @RequestMapping(value="/updatePassword")
