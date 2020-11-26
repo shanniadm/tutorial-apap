@@ -12,5 +12,4 @@ public interface KamarService {
     KamarModel updateKamar(KamarModel kamar);
 
     void deleteKamar(KamarModel kamar);
-    
 }

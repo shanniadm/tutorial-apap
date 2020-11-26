@@ -135,7 +135,36 @@ ${} adalah variable expressions atau ekspresi standar. *{} adalah selection vari
 Saya menyelesaikan nomor 3 dengan memberikan parameter ke html terkait mengenai informasi halaman sehingga ketika menjalankan navbar, html akan memanggil ${halaman} yang merupakan nama halaman tersebut. Misalnya, pada Controller, di fungsi Add Hotel maka akan ditambahkan parameter bernama halaman yang akan bisa diakses di HTML yang berisi string "Add Hotel". Hal tersebut saya lakukan untuk setiap page yang ada. 
 ##
 
+----------------
 
+## **Tutorial 5**
+### **Pertanyaan**
+##
+1. Apa itu Postman? Apa kegunaannya?
+##
+Postman adalah aplikasi yang digunakan untuk uji coba Rest API dimana berfungsi sebagai rest client. Fungsi utamanya tentunya untuk GUI API Caller, namun saat ini Postman juga memiliki banyak fitur lainnya seperti Testing API, Sharing Collection API for Documentation, dan lainnya. 
+##
+2. Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.
+##
+@JsonIgnoreProperties digunakan di tingkat suatu kelas untuk menandakan properti mana atau bahkan daftar properti yang nantinya akan diabaikan. Sedangkan @JsonProperty untuk mendefinisikan logical property yang digunakan dalam serialisasi dan deserialisasi JSON. @JsonProperti dapat mengubah visibilitas logical property menggunakan access elementnya selama serialisasi dan deserialisasi JSON.
+##
+3. Apa kegunaan atribut WebClient?
+##
+WebClient digunakan untuk mengirim data/menerima data baik ke local, intranet, atau internet yang diidentifikasi oleh URI, dimana webclient menggunakan WebRequest untuk menyediakan akses ke sumber yang dituju. 
+##
+4. Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?
+##
+ResponseEntity adalah fungsi yang merepresentasikan seluruh respons HTTP baik status code, header, dan juga isinya. Kegunaannya adalah kita dapat menggunakan ResponseEntity untuk mengkonfigurasikan respons HTTP dimana kita dapat mengembalikan informasi ketika error atau informasi yang related. Sedangkan, BindingResult adalah objek spring yang digunakan untuk menyimpan hasil validasi, binding, dan juga error yang terjadi. Dengan BindingResult, kita dapat melihat apakah objek model tersebut valid atau tidak, jika gagal maka akan mengeluarkan *exception*. 
+#
+Referensi :
+##
+https://medium.com/skyshidigital/documentation-testing-api-dengan-postman-part-1-5d33e430dca7
+##
+https://www.concretepage.com/jackson-api/jackson-jsonignore-jsonignoreproperties-and-jsonignoretype
+##
+https://www.concretepage.com/jackson-api/jackson-jsonproperty-and-jsonalias-example
+##
+https://stackoverflow.com/questions/10413886/what-is-the-use-of-bindingresult-interface-in-spring-mvc
 
 
 
