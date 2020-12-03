@@ -212,7 +212,7 @@ Jawab :
 Di soal yang pertama, saya melakukan modifikasi agar *checkbox* yang ada tidak terlihat, dengan menambahkan *condition* dimana apabila 
 checkednya true maka akan menjadi checkbox, sedangkan jika tidak maka akan jadi hidden. Sehingga, pada sisi kiri tidak akan ditampilkan checkbox sedangkan di sisi kanan akan ditampilkan. 
 ##
-![Screenshot 2](https://i.ibb.co/JQrHkKH/2a.jpg)
+![Screenshot 2](https://i.ibb.co/yfqWd4S/hehe.jpg)
 ![Screenshot 2b](https://i.ibb.co/gwrDZ4b/2b.jpg)
 Kemudian, di soal kedua, saya membuat suatu tombol yang hanya akan muncul apabila sudah terdapat item di dalam list, dimana sama seperti pada nomor 1. Di typenya, saya berikan *condition* apabila panjang list melebihi 0 maka akan ditambilkan sebagai button, dan jika tidak maka akan di *hidden*. Kemudian, saya membuat suatu fungsi untuk menghapus list dengan melakukan set FavItems menjadi sebuah array kosong.
 ##
@@ -223,9 +223,9 @@ Di soal ketiga, saya membuat agar sisi kiri apabila di klik maka akan melakukan 
 ![Screeenshot 4b](https://i.ibb.co/jTd7fLf/Capture.jpg)
 Di soal keempat, saya membuat toggle dengan menggunakan react-toggle. Kemudian, saya membuat handleToggle untuk mengganti value dari toggle ketika diganti (onChange). Apabila show bernilai true, maka akan menampilkan daftar favorite yang ada dimana hal ini dilakukan dengan *conditional*, apabila show true dan item di list FavItems lebih dari 0 maka akan menampilkan daftar favorit. 
 ##
-![Screenshot 5](https://i.ibb.co/mDXXd91/5.jpg)
+![Screenshot 5](https://i.ibb.co/yfqWd4S/hehe.jpg)
 ##
-Di soal kelima, sama seperti soal keempat namun mengatasi kondisi apabila item di list FavItems adalah nol dan akan menampilkan sebagai berikut. 
+Di soal kelima, sama seperti soal keempat namun mengatasi kondisi apabila item di list FavItems adalah nol dan akan menampilkan sebagai berikut. Untuk menampilkan ini, maka saya membuat Empty State untuk mencetak keterangan bahwa belum ada item yang dipilih oleh pengguna.
 ##
 2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
 ##
@@ -250,7 +250,3 @@ https://www.techfor.id/10-keuntungan-menggunakan-react-js-pada-desain-website/
 ##
 https://belajarreactjs.com/kelemahan-dari-reactjs/
 ##
-
-
-
-

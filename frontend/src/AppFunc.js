@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import List from "./components/List";
 import listMovies from "../src/movies.json";
 import Toggle from 'react-toggle';
+import EmptyState from './components/EmptyState';
 
 function App() {
     const [favItems, setFavItems] = useState(() => []);
@@ -63,11 +64,13 @@ function App() {
                         <div className="col-sm">
                             <input type={favItems.length>0 ? "button" : "hidden"}
                             onClick={deleteAllItem} value="Delete All Favorites"/>
+                            { favItems.length > 0 ? 
                             <List
                             title="My Favorites"
                             items={favItems}
                             onItemClick={handleFavItemClick}
-                            />
+                            /> :
+                            <EmptyState/>}
                         </div>
                     : null}
                 </div>

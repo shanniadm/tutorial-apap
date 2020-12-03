@@ -3,6 +3,7 @@ import List from "./components/List";
 import listMovies from "../src/movies.json";
 import './App.css';
 import Toggle from 'react-toggle';
+import EmptyState from './components/EmptyState';
 
 export default class App extends React.Component {
   state = {
@@ -68,11 +69,13 @@ export default class App extends React.Component {
               <div className="col-sm">
                 <input type={this.state.favItems.length>0 ? "button" : "hidden"}
                 onClick={this.deleteList} value="Delete All Favorites"/>
+                { this.state.favItems.length > 0 ? 
                 <List
-                  title="My Favorites"
-                  items={favItems}
-                  onItemClick={this.handleFavItemClick}
-                  />
+                title="My Favorites"
+                items={favItems}
+                onItemClick={this.handleFavItemClick}
+                /> : <EmptyState/>
+                }
               </div>
             : null}
           </div>
