@@ -21,12 +21,6 @@ public class HotelController {
     @Autowired
     private KamarService kamarService;
 
-    @GetMapping("/")
-    private String home(Model model){
-        model.addAttribute("halaman", "Home");
-        return "home";
-    }
-
     //Routing URL yang diinginkan
     @RequestMapping("/hotel/add")
     public String addHotelFormPage(Model model){
