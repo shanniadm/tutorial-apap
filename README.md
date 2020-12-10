@@ -198,7 +198,55 @@ https://www.eplusgo.com/menggunakan-uuid-di-php/
 https://www.baeldung.com/spring-security-granted-authority-vs-role
 
 
+--------------------------------------
 
-
-
-
+## **TUTORIAL 7**
+### ***Pertanyaan***
+##
+1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi
+dari apa yang Anda jelaskan.
+##
+Jawab : 
+##
+![Screenshot 1](https://i.ibb.co/nDXHPGj/1.jpg)
+Di soal yang pertama, saya melakukan modifikasi agar *checkbox* yang ada tidak terlihat, dengan menambahkan *condition* dimana apabila 
+checkednya true maka akan menjadi checkbox, sedangkan jika tidak maka akan jadi hidden. Sehingga, pada sisi kiri tidak akan ditampilkan checkbox sedangkan di sisi kanan akan ditampilkan. 
+##
+![Screenshot 2](https://i.ibb.co/yfqWd4S/hehe.jpg)
+![Screenshot 2b](https://i.ibb.co/gwrDZ4b/2b.jpg)
+Kemudian, di soal kedua, saya membuat suatu tombol yang hanya akan muncul apabila sudah terdapat item di dalam list, dimana sama seperti pada nomor 1. Di typenya, saya berikan *condition* apabila panjang list melebihi 0 maka akan ditambilkan sebagai button, dan jika tidak maka akan di *hidden*. Kemudian, saya membuat suatu fungsi untuk menghapus list dengan melakukan set FavItems menjadi sebuah array kosong.
+##
+![Screenshot 3](https://i.ibb.co/JCMcPFV/3.jpg)
+Di soal ketiga, saya membuat agar sisi kiri apabila di klik maka akan melakukan penghapusan di sisi favorite, maka saya menduplikasi fungsi handleItemClick dan handleFavItemClick, dimana perbedaan kedua fungsi tersebut adalah pada elsenya yaitu pada handleItemClick akan digunakan di list untuk listMovies yang tidak memiliki pilihan untuk splice, sedangkan handleFavItemClick untuk list FavItems.
+##
+![Screeenshot 4](https://i.ibb.co/WVr49Lq/4.jpg)
+![Screeenshot 4b](https://i.ibb.co/jTd7fLf/Capture.jpg)
+Di soal keempat, saya membuat toggle dengan menggunakan react-toggle. Kemudian, saya membuat handleToggle untuk mengganti value dari toggle ketika diganti (onChange). Apabila show bernilai true, maka akan menampilkan daftar favorite yang ada dimana hal ini dilakukan dengan *conditional*, apabila show true dan item di list FavItems lebih dari 0 maka akan menampilkan daftar favorit. 
+##
+![Screenshot 5](https://i.ibb.co/yfqWd4S/hehe.jpg)
+##
+Di soal kelima, sama seperti soal keempat namun mengatasi kondisi apabila item di list FavItems adalah nol dan akan menampilkan sebagai berikut. Untuk menampilkan ini, maka saya membuat Empty State untuk mencetak keterangan bahwa belum ada item yang dipilih oleh pengguna.
+##
+2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
+##
+Jawab : Props adalah variabel yang berasal dari luar kelas atau class parent, dimana props ini biasanya digunakan untuk komunikasi data dari parent ke child component. Sedangkan state adalah variabel yang dibuat dalam suatu class, dan tidak dapat di akses dari component lainnya. 
+##
+3. Apa keuntungan menggunakan component (e.g. List, Item) di React? Berikan contohnya!
+##
+Jawab : Keuntungan menggunakan komponen ialah kode yang dihasilkan tidak akan terlalu kompleks/panjang dikarenakan dapat dipecah-pecah menggunakan komponen-komponen tersebut, selain itu komponen tersebut dapat digunakan kembali dimanapun kita membutuhkannya dan membuat tampilan yang lebih konsisten. 
+##
+4. Menurut kamu, apa saja kelebihan menggunakan React dalam pengembangan web?
+##
+Jawab : Dengan React, maka akan lebih mudah untuk menulis komponen dikarenakan memungkinkan untuk mengkombinasikan antara HTML dengan javascript dan aturan yang ada lebih sedikit. Selain itu, proses rendering akan jauh lebih cepat dikarenakan adanya virtual DOM dan dapat menghostingnya ke dalam memori, apabila terjadi perubahan, maka virtual DOM dan actual DOM akan berubah seketika karena terletak dalam memori dan tidak diperlukan pembaharuan secara keseluruhan dan rutin sehingga kinerja aplikasi tidak akan terganggu. Selain itu, komponen juga akan dapat digunakan kembali dimanapun kita membutuhkannya. 
+##
+5. Menurut kamu, apa saja kekurangan menggunakan React dalam pengembangan web?
+##
+Jawab : Dokumentasi yang buruk dikarenakan react memperbaharui dengan sangat cepat maka tidak ada waktu untuk membuat dokumentasi yang tepat. Selain itu, browser dengan versi lama tidak mendukung untuk proses reactJS ini. 
+##
+##
+Referensi : 
+##
+https://www.techfor.id/10-keuntungan-menggunakan-react-js-pada-desain-website/
+##
+https://belajarreactjs.com/kelemahan-dari-reactjs/
+##
