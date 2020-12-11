@@ -250,3 +250,39 @@ https://www.techfor.id/10-keuntungan-menggunakan-react-js-pada-desain-website/
 ##
 https://belajarreactjs.com/kelemahan-dari-reactjs/
 ##
+
+-------------------------------------------------
+## **Tutorial 9**
+### ***Pertanyaan***
+##
+1. Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?
+##
+Jawab : Langkah yang saya lakukan untuk menyelesaikan latihan satu adalah melakukan setState pada variabel namaHotel, alamat, dan nomorTelepon menjadi "" setelah melakukan POST. Hal ini dikarenakan pada form digunakan value this.state.(namaVariabel) sehingga agar nilai sebelumnya tidak muncul kembali, maka harus direset terlebih dahulu menjadi "" sehingga ketika menampilkan form, maka value form akan menjadi kosong. 
+##
+2. Jelaskan fungsi dari async dan await!
+##
+Jawab : Fungsi dari **async** adalah mengubah suatu fungsi menjadi asinkronus dimana suatu fungsi dapat dijalankan bersamaan dengan *javascript*, sedangkan **await** untuk menunda eksekusi yang ada hingga proses asinkronos tersebut selesai. 
+##
+3. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 7 pada Component Lifecycle pada pertanyaan ini.
+##
+Jawab :
+Berikut adalah hasil *screenshot* yang didapatkan : 
+![Foto 1](https://i.ibb.co/3hHqLz8/No-3-2.jpg)
+![Foto 2](https://i.ibb.co/g3QVnkw/No-3-1.jpg)
+![Foto 3](https://i.ibb.co/h9L264n/3.jpg)
+##
+4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate,
+componentDidUpdate, componentWillReceiveProps,
+componentWillUnmount.
+## 
+Jawab : 
+1. ComponentDidMount -> dijalankan setelah render pertama dan dipanggil langsung setelah sebuah komponen dipasang. Fungsi dari componentDidMount adalah sebagian besar untuk memanggil API, mempersiapkan subscription, akses dan manipulasi DOM. Use case yang sering dilakukan adalah melakukan request data dari API dan setState yang akan memicu render ekstra. 
+2. ShouldComponentUpdate -> untuk memberi tahu apakah suatu komponen tidak dipengaruhi oleh perubahan yang terjadi di state/prop dan akan mengembalikan return value berupa boolean. Use case yang sering dilakukan adalah untuk melakukan perbandingan akan props dan state, kemudian memberi tahu apakah pembaruan bisa dilewati/tidak. 
+3. ComponentDidUpdate -> Dipanggil setelah terjadi perubahan dan tidak langsung dipanggil saat proses render awal, dimana digunakan untuk beroperasi pada DOM ketika komponen diperbaharui dan untuk menjalankan pemanggilan jaringan. Use case yang sering dilakukan adalah membandingkan prop saat ini dengan sebelumnya dan memperbaharui DOM sebagai respon perubahaan yang ada.
+4. ComponentWillReceiveProps -> Mengecek apakah suatu props diterima, dapat membandingkan this.props dengan next.props dan melakukan transisi state dengan setState. Use case yang sering digunakan adalah terjadi update pada props contohnya memperbaharui status komponen. 
+5. ComponentWillUnmount -> dipanggil sebelum komponen dilepas, dan berguna untuk melakukan pembersihan yang diperlukan baik timer atau subscription. Use case yang paling sering dilakukan adalah pembersihan timer dan subscription yang telah dibuat. 
+##
+referensi : 
+## 
+https://medium.com/coderupa/panduan-komplit-asynchronous-programming-pada-javascript-part-4-async-await-fc504c344238
+##

@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/v1")
 public class HotelRestController {
     @Autowired
@@ -74,7 +75,7 @@ public class HotelRestController {
     private List<HotelModel> retrieveListHotel(){
         return hotelRestService.retrieveListHotel();
     }
-
+    
     @GetMapping(value = "/hotel/{idHotel}/status")
     private Mono<String> getStatus(@PathVariable("idHotel") Long idHotel){
         return hotelRestService.getStatus(idHotel);
