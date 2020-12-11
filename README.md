@@ -286,3 +286,9 @@ referensi :
 ## 
 https://medium.com/coderupa/panduan-komplit-asynchronous-programming-pada-javascript-part-4-async-await-fc504c344238
 ##
+https://id.reactjs.org/docs/react-component.html#componentwillunmount
+##
+https://medium.com/codeacademia/apa-itu-component-lifecycle-di-react-bfcb64f64e0e
+##
+https://www.tutorialspoint.com/reactjs/reactjs_component_life_cycle.htm
+##

@@ -37,7 +37,6 @@ class HotelList extends Component {
         try {
             const { data } = await APIConfig.get("/hotels");
             this.setState({ hotels: data });
-
         } catch (error) {
             alert("Oops terjadi masalah pada server");
             console.log(error);
