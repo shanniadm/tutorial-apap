@@ -30,7 +30,11 @@ class HotelList extends Component {
     }
 
     componentDidMount() {
+        this.setState({isLoading : true});
         this.loadData();
+        setTimeout(() => {
+            this.setState({isLoading : false});
+        }, 2000);
     }
 
     async loadData() {
@@ -147,6 +151,7 @@ class HotelList extends Component {
                 value={this.state.search}
                 onChange={this.handleSearch}/>
             </div>
+            { this.state.isLoading && <p>Fetch data from server...</p>}
             {this.state.hotels && this.state.hotels.filter(this.filterHotel).map((hotel) => (
             <Hotel
                 key={hotel.id}

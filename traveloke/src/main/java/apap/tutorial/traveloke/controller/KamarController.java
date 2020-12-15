@@ -1,5 +1,4 @@
 package apap.tutorial.traveloke.controller;
-
 import apap.tutorial.traveloke.model.HotelModel;
 import apap.tutorial.traveloke.model.KamarModel;
 import apap.tutorial.traveloke.service.KamarService;
