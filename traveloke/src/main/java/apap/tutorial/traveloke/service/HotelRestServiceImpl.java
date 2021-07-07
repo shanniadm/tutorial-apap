@@ -1,5 +1,4 @@
 package apap.tutorial.traveloke.service;
-
 import apap.tutorial.traveloke.model.HotelModel;
 import apap.tutorial.traveloke.repository.HotelDb;
 import apap.tutorial.traveloke.rest.Setting;
@@ -25,6 +24,10 @@ public class HotelRestServiceImpl implements HotelRestService {
 
     @Autowired
     private HotelDb hotelDb;
+
+    public HotelRestServiceImpl(WebClient.Builder webClientBuilder) {
+        this.webClient = webClientBuilder.baseUrl(Setting.hotelUrl).build();
+    }
 
     @Override
     public HotelModel createHotel(HotelModel hotel) {
@@ -63,10 +66,6 @@ public class HotelRestServiceImpl implements HotelRestService {
         } else {
             throw new UnsupportedOperationException();
         }
-    }
-
-    public HotelRestServiceImpl(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl(Setting.hotelUrl).build();
     }
 
     @Override
